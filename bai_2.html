@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_2</title>
+</head>
+<body>
+<script>
+    let number=prompt("Nhap vao 1 so: ");
+    let arr=[];
+    for(i=0;i<=number.length-1;i++) { //Nhập các chữ cái của String vào mảng
+        arr[i] = number[i];
+    }
+    for(j=0;j<=arr.length-1;j++){
+        if((arr[j-1]%2===0)&&(arr[j]%2===0)){//điều kiện 2 phần tử liên tiếp là số chẵn
+            arr.splice(j,0,"-");//thêm phần tử "-" vào vị trí j, không xóa phần từ nào
+        }
+
+    }
+
+    let arrString=arr.join("");//Hàm join("") chuyển từ mảng sang string, k dùng đc hàm toString()
+    document.write(arrString);
+    console.log(arr);
+</script>
+</body>
+</html>

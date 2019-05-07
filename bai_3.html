@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_3</title>
+</head>
+<body>
+<script>
+    let StrInput=prompt("Nhap vao chuoi: ");
+    let arrInput=[],arrUpper=[], arrLower=[];
+
+    const upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lower="abcdefghijklmnopqrstuvwxyz";
+    for(i=0;i< upper.length;i++){
+         //Chuyển từ String sang Array
+        arrUpper[i]=upper[i];
+        arrLower[i]=lower[i];
+    }
+    for(i=0;i<StrInput.length;i++){
+        arrInput[i]=StrInput[i];
+    }
+    console.log(arrInput);
+    console.log(arrUpper);
+    console.log(arrLower);
+</script>
+</body>
+</html>

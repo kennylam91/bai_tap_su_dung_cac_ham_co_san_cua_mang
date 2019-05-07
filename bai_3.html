@@ -8,7 +8,7 @@
 <script>
     let StrInput=prompt("Nhap vao chuoi: ");
     let arrInput=[],arrUpper=[], arrLower=[];
-
+    let upperIndex, lowerIndex;
     const upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lower="abcdefghijklmnopqrstuvwxyz";
     for(i=0;i< upper.length;i++){
@@ -19,9 +19,13 @@
     for(i=0;i<StrInput.length;i++){
         arrInput[i]=StrInput[i];
     }
-    console.log(arrInput);
-    console.log(arrUpper);
-    console.log(arrLower);
+    for(i=0;i<arrInput.length;i++){
+        upperIndex= arrUpper.indexOf(arrInput[i]);//Tim gia tri index cua arrInput[i] trong mang arrUpper
+        lowerIndex= arrLower.indexOf(arrInput[i]);//Tim gia tri index cua arrInput[i] trong mang lowerArr
+        if(upperIndex>=0) arrInput[i]=arrLower[upperIndex];//neu upperIndex co gia tri lon hon 0 thi tuc la chu cai
+        if(lowerIndex>=0) arrInput[i]=arrUpper[lowerIndex];//hien tai la chu hoa --> chuyen thanh chu thuong
+    }
+    document.write(StrInput, " ==> ", arrInput.join(""));
 </script>
 </body>
 </html>
